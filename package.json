@@ -8,8 +8,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "node ./node_modules/gulp/bin/gulp",
-    "test": "node ./node_modules/gulp/bin/gulp tests",
-    "build": ""
+    "test": "node ./node_modules/gulp/bin/gulp tests"
   },
   "dependencies": {
     "app-module-path": "^2.1.0",
@@ -24,7 +23,6 @@
     "express": "~4.13.1",
     "gulp": "^3.9.1",
     "highland": "^2.10.1",
-    "jade": "~1.11.0",
     "lodash": "^4.17.2",
     "moment": "^2.17.0",
     "moment-range": "^2.2.0",
