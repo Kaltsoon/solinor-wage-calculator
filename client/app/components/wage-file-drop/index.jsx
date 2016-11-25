@@ -21,7 +21,7 @@ class WageFileDrop extends React.Component {
         activeClassName="wage-file-drop--active"
         multiple={false}
         onDrop={this.onDropFile}
-        accept="text/csv"
+        accept="text/csv,application/csv"
       >
         <div>
          Drag a csv file here
