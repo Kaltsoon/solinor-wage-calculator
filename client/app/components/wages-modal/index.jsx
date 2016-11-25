@@ -8,7 +8,7 @@ import { toggle } from 'state/wages-modal';
 class WagesModal extends React.Component {
   render() {
     return (
-      <Modal isOpen={this.props.isOpen} toggle={this.props.onToggle}>
+      <Modal isOpen={this.props.isOpen} toggle={this.props.onToggle} size="lg">
         <ModalHeader toggle={this.props.onToggle}>Wages</ModalHeader>
         <ModalBody>
           <WagesTable />

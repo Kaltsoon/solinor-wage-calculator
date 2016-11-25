@@ -4,9 +4,11 @@ import { connect } from 'react-redux';
 function renderHeadings() {
   return (
     <tr>
-      <th>Person's #</th>
-      <th>Person's name</th>
+      <th>#</th>
+      <th>Name</th>
       <th>Wage ($)</th>
+      <th>Evening hours</th>
+      <th>Total hours</th>
       <th>Month and year</th>
     </tr>
   );
@@ -19,6 +21,8 @@ class WagesTable extends React.Component {
         <td>{row.personId}</td>
         <td>{row.personName}</td>
         <td>{row.wage}$</td>
+        <td>{row.eveningHours}</td>
+        <td>{row.totalHours}</td>
         <td>{row.date}</td>
       </tr>
     ));
@@ -45,6 +49,8 @@ WagesTable.propTypes = {
       personName: React.PropTypes.string,
       date: React.PropTypes.string,
       wage: React.PropTypes.number,
+      eveningHours: React.PropTypes.number,
+      totalHours: React.PropTypes.number,
     }),
   ),
 };
