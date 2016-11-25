@@ -16,7 +16,7 @@ Drag a csv file to "Drag a csv file here" box and press "Calculate wages" button
 
 If an error occurs, an error message will appear and modal won't open.
 
-If you prefer a more old school client, feel free to send your file as a HTTP request to `https://solinor-wage-calculator.herokuapp.com/api/v1/wage-files` with `Content-Type` header set to `multipart/form-data`.
+If you prefer a more old school client, feel free to send your file as a HTTP POST request to `https://solinor-wage-calculator.herokuapp.com/api/v1/wage-files` with `Content-Type` header set to `multipart/form-data`.
 
 ## How to develop?
 
