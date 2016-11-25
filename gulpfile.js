@@ -50,7 +50,7 @@ gulp.task('styles', makeSassTask({
 }));
 
 gulp.task('styles:watch', ['styles'], () => {
-  gulp.watch(['./client/app/**/*.scss'], ['styles']);
+  gulp.watch(['./client/app/**/*.scss', './client/bootstrap/**/*.scss'], ['styles']);
 });
 
 gulp.task('tests.server', makeMochaTask({

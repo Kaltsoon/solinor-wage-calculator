@@ -3,4 +3,9 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+
+  &__wrapper {
+    max-width: 600px;
+    padding: $spacer-y $spacer-x;
+  }
 }

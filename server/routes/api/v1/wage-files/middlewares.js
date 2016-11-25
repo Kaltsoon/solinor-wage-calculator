@@ -7,6 +7,10 @@ function parseFile(getFile) {
   return (req, res, next) => {
     const file = getFile(req);
 
+    if(!file || !file.path) {
+      return next(new errors.InvalidRequestError('File is required'));
+    }
+
     wageFileParser.parseFromReadStream(fs.createReadStream(file.path))
       .then(data => {
         fs.unlink(file.path, () => {

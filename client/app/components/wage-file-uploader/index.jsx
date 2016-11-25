@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button } from 'reactstrap';
+import { Button, Alert } from 'reactstrap';
 
 import Icon from 'components/icon';
 import WageFileDrop from 'components/wage-file-drop';
@@ -8,9 +8,9 @@ import { uploadFile } from 'state/wage-file-uploader';
 
 function renderError() {
   return (
-    <p className="text-danger">
-      <Icon name="times" /> Couldn't calculate wages from this file. Maybe its malformed?
-    </p>
+    <Alert color="danger">
+      Couldn't calculate wages from the file. Maybe its malformed?
+    </Alert>
   );
 }
 
@@ -18,9 +18,9 @@ class WageFileUploader extends React.Component {
   renderFooter() {
     return (
       <div className="mt-1">
-        <p className="text-success">
-          <Icon name="check" /> {this.props.file.name} uploaded
-        </p>
+        <Alert color="success">
+          {this.props.file.name} uploaded
+        </Alert>
 
         {this.props.error && renderError()}
 
@@ -31,7 +31,7 @@ class WageFileUploader extends React.Component {
             size="lg"
             onClick={this.props.onUpload}
           >
-            {this.props.uploading ? 'Calculating...' : 'Calculate wages' }
+            <Icon name="calculator" /> {this.props.uploading ? 'Calculating...' : 'Calculate wages' }
           </Button>
         </div>
       </div>

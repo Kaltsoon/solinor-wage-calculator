@@ -1,12 +1,11 @@
 .wage-file-drop {
   height: 200px;
-  max-width: 350px;
   width: 100%;
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px dashed $gray-light;
+  border: 2px dashed lighten($gray-light, 25%);
   color: $gray-light;
   margin: 0px auto;
 

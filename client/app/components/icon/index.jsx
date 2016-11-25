@@ -7,7 +7,7 @@ class Icon extends React.Component {
       : '';
 
     return (
-      <i className={`fa fa-${this.props.name} ${behaviorClass}`} />
+      <i className={`fa fa-${this.props.name} ${behaviorClass} ${this.props.className || ''}`} />
     );
   }
 }
@@ -15,6 +15,7 @@ class Icon extends React.Component {
 Icon.propTypes = {
   name: React.PropTypes.string.isRequired,
   behavior: React.PropTypes.string,
+  className: React.PropTypes.string,
 };
 
 export default Icon;
