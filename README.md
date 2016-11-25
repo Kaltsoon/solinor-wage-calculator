@@ -20,9 +20,9 @@ If you prefer a more old school client, feel free to send your file as a HTTP PO
 
 ## How to develop?
 
-Start by cloning this repository / forking.
+Start by cloning / forking this repository.
 
-Server side code can be cound in the `server` folder and client side code can be found in the `client` folder. `gulpfile.js` file contains several useful tasks for developing, you can ran the the default task which launches nodemon with JavaScript and SASS processing tasks by running `npm run-script dev`.
+Server side code can be cound in the `server` folder and client side code can be found in the `client` folder. `gulpfile.js` file contains several useful tasks for developing. You can run the the default task which launches nodemon with JavaScript and SASS processing tasks by running `npm run-script dev`.
 
 If you don't want to put environment variables infront of the command, you can create a `.env` file in the root of the project.
 
