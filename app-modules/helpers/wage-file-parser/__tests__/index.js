@@ -43,7 +43,9 @@ describe('Wage file parser', () => {
     const readStream = fs.createReadStream(path.join(__dirname, 'test-data-invalid.csv'));
 
     return wageFileParser.parseFromReadStream(readStream)
-      .then(() => new Error('Invalid file was not rejected'))
+      .catch(err => {
+        return expect(err).toExist();
+      });
   });
 
 });

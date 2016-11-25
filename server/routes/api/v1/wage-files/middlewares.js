@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 const wageFileParser = require('app-modules/helpers/wage-file-parser');
+const errors = require('app-modules/errors');
 
 function parseFile(getFile) {
   return (req, res, next) => {
@@ -9,14 +10,14 @@ function parseFile(getFile) {
     wageFileParser.parseFromReadStream(fs.createReadStream(file.path))
       .then(data => {
         fs.unlink(file.path, () => {
-          console.log(data);
-
           req.wages = data;
 
           return next();
         });
       })
-      .catch(next);
+      .catch(() => {
+        return next(new errors.InvalidRequestError('File is invalid'));
+      });
   }
 }
 

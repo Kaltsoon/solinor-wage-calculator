@@ -85,7 +85,6 @@ function parseFromReadStream(readStream) {
 
   return new Promise((resolve, reject) => {
     highland(streamByLine)
-      .stopOnError(reject)
       .drop(1)
       .map(line =>  line.toString().split(','))
       .map(line => {
@@ -95,6 +94,7 @@ function parseFromReadStream(readStream) {
 
         return { personName, personId, date, startHour, startMinute, endHour, endMinute };
       })
+      .stopOnError(reject)
       .map(attachHours)
       .map(attachWage)
       .each(wageAggregator.push)
