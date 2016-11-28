@@ -6,15 +6,15 @@ Demo: [https://solinor-wage-calculator.herokuapp.com/](https://solinor-wage-calc
 
 ## About the structure
 
-The mosts interesting modules of this project are in the `app-modules/helpers/wage/index.js` and `app-modules/wage-file-parser/index.js` files. First file contains all the logic for calculating the wages and the latter streams a csv file line by line and reduce it to wage per person, per month and year. Idea was to minimize the use of memory for large files using streams, but `highland` library also provides excelent api which simplifies the code. 
+The mosts interesting modules of this project are in the `app-modules/helpers/wage/index.js` and `app-modules/wage-file-parser/index.js` files. First file contains all the logic for calculating the wages and the latter streams a csv file line by line and reduce it to wage per person, per month and year. Idea was to minimize the use of memory for large files using streams, but `highland` library also provides excellent api which simplifies the code. 
 
 Tests for these modules can be found in the `__tests__` folder inside each modules root folder. 
 
 ## How to use?
 
-Drag a csv file to "Drag a csv file here" box and press "Calculate wages" button. A modal will open soon after with the calculated wages. 
+Drag a csv file to "Drag a csv file here" box and press "Calculate wages" button. A modal will open soon after with the calculated wages. [Here](https://github.com/Kaltsoon/solinor-wage-calculator/blob/master/app-modules/helpers/wage-file-parser/__tests__/test-data-valid.csv) is an example of a valid csv file.
 
-If an error occurs, an error message will appear and modal won't open.
+If an error occurs, an error message will appear and modal won't open. This is most likely because of invalid file content.
 
 If you prefer a more old school client, feel free to send your file as a HTTP POST request to `https://solinor-wage-calculator.herokuapp.com/api/v1/wage-files` with `Content-Type` header set to `multipart/form-data`.
 
